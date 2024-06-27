@@ -1,6 +1,4 @@
-﻿using FizzBuzz.API.Enums;
-using FizzBuzz.API.Model;
-
+﻿
 namespace FizzBuzz.API.Utility
 {
     public static class Helper
