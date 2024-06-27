@@ -7,7 +7,7 @@ using Moq;
 
 namespace FizzBuzzAPI.Test.Controller
 {
-    internal class FizzBuzzControllerTest
+    public class FizzBuzzControllerTest
     {
 
         private Mock<ICodingTestService> _mockCodingCourseService;
