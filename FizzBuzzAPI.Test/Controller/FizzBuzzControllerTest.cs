@@ -24,9 +24,9 @@ namespace FizzBuzzAPI.Test.Controller
         {
             var expectedResults = new List<CodingTest>()
             {
-                new CodingTest { UserInput = "3", FinalResult = "Fizz" },
-                new CodingTest { UserInput = "5", FinalResult = "Buzz" },
-                new CodingTest { UserInput = "15", FinalResult = "FizzBuzz" }
+                new CodingTest { UserInput = "3", FinalResult = new List < string > { "Fizz" } },
+                new CodingTest { UserInput = "5", FinalResult = new List < string > { "Buzz" } },
+                new CodingTest { UserInput = "15", FinalResult = new List < string > { "FizzBuzz" } }
             };
             _mockCodingCourseService.Setup(s => s.DisplayResult(It.IsAny<string[]>()))
               .Returns(Task.FromResult(expectedResults));
@@ -46,9 +46,10 @@ namespace FizzBuzzAPI.Test.Controller
         {
             var expectedResults = new List<CodingTest>()
             {
-                new CodingTest { UserInput = "", FinalResult = "Invalid Item" },
-                new CodingTest { UserInput = "A", FinalResult = "Invalid Item" },
-                new CodingTest { UserInput = "29", FinalResult = "", DivisionPerfomed = new List<string>{ "Divided 29 by 3", "Divided 29 by 5" } }
+                new CodingTest { UserInput = "", FinalResult = new List < string > { "Invalid Item" } },
+                new CodingTest { UserInput = "A", FinalResult = new List < string > { "Invalid Item" }},
+                new CodingTest { UserInput =  null, FinalResult = new List < string > { "Invalid Item" }},
+                new CodingTest { UserInput = "29", FinalResult = new List<string>{ "Divided 29 by 3", "Divided 29 by 5" }}
             };
             _mockCodingCourseService.Setup(s => s.DisplayResult(It.IsAny<string[]>()))
               .Returns(Task.FromResult(expectedResults));
